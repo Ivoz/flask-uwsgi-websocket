@@ -1,7 +1,9 @@
-from . import uwsgi, WebSocket, WebSocketClient, WebSocketMiddleware
+import uwsgi
+
+from .websockets import UWebSocket, UWSMiddleware, UWSApp
 
 
-class AsyncWebSocketClient(WebSocketClient):
+class AsyncWebSocket(UWebSocket):
     def receive(self):
         while True:
             uwsgi.wait_fd_read(self.fd, self.timeout)
@@ -11,9 +13,9 @@ class AsyncWebSocketClient(WebSocketClient):
                 return uwsgi.websocket_recv_nb()
 
 
-class AsyncWebSocketMiddleware(WebSocketMiddleware):
-    client = AsyncWebSocketClient
+class AsyncWSMiddleware(UWSMiddleware):
+    client = AsyncWebSocket
 
 
-class AsyncWebSocket(WebSocket):
-    middleware = AsyncWebSocketMiddleware
+class AsyncApp(UWSApp):
+    middleware = AsyncWSMiddleware

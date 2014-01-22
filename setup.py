@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from setuptools import find_packages, setup
+from setuptools import setup
 
 setup(
     name='Flask-uWSGI-WebSocket',
@@ -10,10 +10,9 @@ setup(
     author_email='zk@monoid.io',
     description='High-performance WebSockets for your Flask apps powered by uWSGI.',
     long_description=open('README.rst').read(),
-    py_modules=['flask_uwsgi_websocket'],
     zip_safe=False,
     include_package_data=True,
-    packages=find_packages(),
+    packages=['flask_uwsgi_websocket'],
     platforms='any',
     install_requires=[
         'Flask',
