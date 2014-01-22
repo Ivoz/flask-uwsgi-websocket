@@ -1,7 +1,6 @@
 import uuid
 from gevent import sleep, spawn
 from gevent.queue import Queue
-import uwsgi
 
 from .websockets import UWebSocket, UWSMiddleware, UWSApp
 

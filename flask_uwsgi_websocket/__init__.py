@@ -11,7 +11,4 @@ __author__ = 'Zach Kelling'
 
 from .websockets import *
 from .async import *
-try:
-    from .gevent import *
-except ImportError:
-    pass
+from ._gevent import *

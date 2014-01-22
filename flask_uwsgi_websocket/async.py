@@ -1,5 +1,3 @@
-import uwsgi
-
 from .websockets import UWebSocket, UWSMiddleware, UWSApp
 
 

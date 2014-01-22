@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from flask import Flask, render_template
-from flask.ext.uwsgi_websocket import GeventWebSocket
+from flask.ext.uwsgi_websocket import GeventWSApp
 
 app = Flask(__name__)
 ws = GeventWebSocket(app)

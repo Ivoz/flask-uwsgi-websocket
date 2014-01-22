@@ -3,7 +3,6 @@ from __future__ import print_function
 import os
 import sys
 import uuid
-import uwsgi
 
 
 class UWebSocket(object):
@@ -58,6 +57,7 @@ class UWSApp(object):
     middleware = UWSMiddleware
 
     def __init__(self, app=None, timeout=60):
+        import uwsgi
         if app:
             self.init_app(app)
         self.timeout = timeout

@@ -10,9 +10,7 @@ setup(
     author_email='zk@monoid.io',
     description='High-performance WebSockets for your Flask apps powered by uWSGI.',
     long_description=open('README.rst').read(),
-    zip_safe=False,
-    include_package_data=True,
-    packages=['flask_uwsgi_websocket'],
+    py_modules=['flask_uwsgi_websocket'],
     platforms='any',
     install_requires=[
         'Flask',
